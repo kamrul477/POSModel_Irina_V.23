@@ -1,0 +1,5 @@
+<Modules>
+  <Module PersistentId="BB3570EB-1C01-49ED-9954-6007F819C878" ModuleId="POSModel" />
+  <Module PersistentId="2C578F33-49F3-4888-BED5-258B66F78FDC" ModuleId="POSApplications" />
+  <Module PersistentId="6B8F1FE1-7B1B-487E-BC8B-15B8536FA141" ModuleId="POSManager" />
+</Modules>

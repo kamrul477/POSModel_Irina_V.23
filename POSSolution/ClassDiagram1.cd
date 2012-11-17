@@ -1,0 +1,297 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="POSSolution.Close" Collapsed="true">
+    <Position X="0.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAgAAAAIAAAAAAAoAIAAAAAAAAACA=</HashCode>
+      <FileName>Close.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="POSSolution.InUse" Collapsed="true">
+    <Position X="3" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAgAAAAIAAAAAAAoAIAAAAAAAAACA=</HashCode>
+      <FileName>InUse.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="POSSolution.Open" Collapsed="true">
+    <Position X="5.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAgAAAAIAAAAAAAoAIAAAAAAAAACA=</HashCode>
+      <FileName>Open.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="POSSolution.Area" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="7.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AMICBCAAQAMiBAAACAAAWBAAFAAQAAAUBAREAZAUAAA=</HashCode>
+      <FileName>Partials\Area.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="POSSolution.Category" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="9.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQACAAAAABEiAAAQAAAAggAABAAABBAEAAQAEAA0AgA=</HashCode>
+      <FileName>Partials\Category.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="POSSolution.Company" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="11.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AMACBGAAAIEyAAAAAACAEEIAFAEAABAWBAQEAQAUAAI=</HashCode>
+      <FileName>Partials\Company.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="POSSolution.Employee" Collapsed="true">
+    <Position X="0.5" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIABAAAAAAAAAECAAAgEEAAQgACQAAACEAAAARABAAA=</HashCode>
+      <FileName>Partials\Employee.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="POSSolution.Menu" Collapsed="true">
+    <Position X="14.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIACAAAAQAAAAAAAAAAAEAAABAAQEAAAAAAAARAUAiA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="POSSolution.MenuProduct" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="7.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAgCAAAAAAIAQAIAIAAAQAABBAAKBAAgAAkAAAwUAAA=</HashCode>
+      <FileName>Partials\MenuProduct.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="POSSolution.MenuProductTemperal" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="9.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAACAAAAQAoAAEECkAAAAAIAAAgAAAEAAACEAAAAgA=</HashCode>
+      <FileName>Partials\MenuProductTemperal.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="POSSolution.Payment" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="11.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACCIAIQABAgEAAAAARAACABACAAQAAAAAAgAAUUAA=</HashCode>
+      <FileName>Partials\Payment.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="POSSolution.Permission" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="14.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAgAkgAAAAAABgAAAADAAAEAgEAAQAAAAUAAA=</HashCode>
+      <FileName>Partials\Permission.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="POSSolution.Person" Collapsed="true">
+    <Position X="0.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAACAEAQAAMAAAAAABEAAAAABAAAAAAACAQABgAUAAg=</HashCode>
+      <FileName>Partials\Person.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="POSSolution.ProductDescription" Collapsed="true">
+    <Position X="9.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BIwHgAAwAAEhAwQAAIAAAAAABAAAQAAMAAQkAACUCgA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="POSSolution.Sale" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="13" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIMiBCCABIBABgAAEEgEUAQARBCAUAAAnBAEACQcAQQ=</HashCode>
+      <FileName>Partials\Sale.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="POSSolution.SaleLineItem" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="14.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QIAAAIAAAABIgAAECAABAACIAAAiUAAABQAEgAABEwE=</HashCode>
+      <FileName>Partials\SaleLineItem.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="POSSolution.Store" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="9.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CMACBCAAABMiABAAIAGAEAAADACJAAAUFAQEFwAUAAA=</HashCode>
+      <FileName>Partials\Store.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="POSSolution.Table" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="11.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAICEAAAACEgAAAABAACDAAQlAKAEIAEKARAIYAVAAI=</HashCode>
+      <FileName>Partials\Table.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="POSSolution.Terminal" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="14.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AMACFCCAgAEiAAAEAEAAFAAAhEAAEAAULAQEAQAUAAA=</HashCode>
+      <FileName>Partials\Terminal.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="POSSolution.POSDBEntities" Collapsed="true">
+    <Position X="7.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIIgAUAACLNgBCQQgBgQVkQACAK4MSIgMKAIBRQCAgA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="POSSolution.Course" Collapsed="true">
+    <Position X="13" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAEgAAAAAAAAAgCABAAAAAAEAAQAAAAUAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="POSSolution.PaymentType" Collapsed="true">
+    <Position X="13" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAFgAAAAAAAAAAAAFAAAAAAEAAQAAAAUAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="POSSolution.SaleUpdateByEmployee" Collapsed="true">
+    <Position X="7.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIAAAABAwAAIKAADAAAACAAAAAABBAAAiAADEAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="POSSolution.TableState" Collapsed="true">
+    <Position X="13" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAQAAEgAAAAAAAAQAAABAAAAAAEAAQAAAAUAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="POSSolution.Program" Collapsed="true">
+    <Position X="11.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="POSSolution.TableStateMachine" Collapsed="true">
+    <Position X="3" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAgAAAAIAAAAAAAoAIAAAAAAAAACA=</HashCode>
+      <FileName>TableStateMachine.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="POSSolution.IArea" Collapsed="true">
+    <Position X="7.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Partials\IArea.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="POSSolution.ICategory" Collapsed="true">
+    <Position X="9.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Partials\ICategory.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="POSSolution.ICompany" Collapsed="true">
+    <Position X="11.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAgAAAAAAAAAAAAAAAAAAACAAAAAQAAAAI=</HashCode>
+      <FileName>Partials\ICompany.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="POSSolution.IEmployee" Collapsed="true">
+    <Position X="13" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAQAAAAAAAAAEAAAAAAAAAA=</HashCode>
+      <FileName>Partials\IEmployee.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="POSSolution.IMenu" Collapsed="true">
+    <Position X="14.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Partials\IMenu.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="POSSolution.IMenuProduct" Collapsed="true">
+    <Position X="7.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAAQAgAAAAAAAAAAAAAAAAAAABAAAAAAACCQA=</HashCode>
+      <FileName>Partials\IMenuProduct.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="POSSolution.IMenuProductTemperal" Collapsed="true">
+    <Position X="9.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAQAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Partials\IMenuProductTemperal.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="POSSolution.IPayment" Collapsed="true">
+    <Position X="11.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Partials\IPayment.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="POSSolution.IPermission" Collapsed="true">
+    <Position X="13" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAgAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Partials\IPermission.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="POSSolution.IProductDescription" Collapsed="true">
+    <Position X="14.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAACAAA=</HashCode>
+      <FileName>Partials\IProductDescription.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="POSSolution.ISale" Collapsed="true">
+    <Position X="7.75" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAACAAABAAgAAAAAAAAAAAAAAQAAAAAAAAAAAAQA=</HashCode>
+      <FileName>Partials\ISale.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="POSSolution.ISaleLineItem" Collapsed="true">
+    <Position X="9.5" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAACUAAAAAAAgAAAAQA=</HashCode>
+      <FileName>Partials\ISaleLineItem.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="POSSolution.IStore" Collapsed="true">
+    <Position X="11.25" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAgAAAAAAAAAAAAAACAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Partials\IStore.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="POSSolution.ITable" Collapsed="true">
+    <Position X="13" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAgAAAAAAAABAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Partials\ITable.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="POSSolution.ITerminal" Collapsed="true">
+    <Position X="14.75" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAgAAAAAAAABAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Partials\ITerminal.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Tahoma" Size="8.25" />
+</ClassDiagram>

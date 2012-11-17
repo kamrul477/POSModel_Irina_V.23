@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "POSModel", "POSSolution\POSModel.csproj", "{BB3570EB-1C01-49ED-9954-6007F819C878}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "POSApplications", "POSApplications\POSApplications.csproj", "{2C578F33-49F3-4888-BED5-258B66F78FDC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "POSManager", "POSManager\POSManager.csproj", "{6B8F1FE1-7B1B-487E-BC8B-15B8536FA141}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BB3570EB-1C01-49ED-9954-6007F819C878}.Debug|x86.ActiveCfg = Debug|x86
+		{BB3570EB-1C01-49ED-9954-6007F819C878}.Debug|x86.Build.0 = Debug|x86
+		{BB3570EB-1C01-49ED-9954-6007F819C878}.Release|x86.ActiveCfg = Release|x86
+		{BB3570EB-1C01-49ED-9954-6007F819C878}.Release|x86.Build.0 = Release|x86
+		{2C578F33-49F3-4888-BED5-258B66F78FDC}.Debug|x86.ActiveCfg = Debug|x86
+		{2C578F33-49F3-4888-BED5-258B66F78FDC}.Debug|x86.Build.0 = Debug|x86
+		{2C578F33-49F3-4888-BED5-258B66F78FDC}.Release|x86.ActiveCfg = Release|x86
+		{2C578F33-49F3-4888-BED5-258B66F78FDC}.Release|x86.Build.0 = Release|x86
+		{6B8F1FE1-7B1B-487E-BC8B-15B8536FA141}.Debug|x86.ActiveCfg = Debug|x86
+		{6B8F1FE1-7B1B-487E-BC8B-15B8536FA141}.Debug|x86.Build.0 = Debug|x86
+		{6B8F1FE1-7B1B-487E-BC8B-15B8536FA141}.Release|x86.ActiveCfg = Release|x86
+		{6B8F1FE1-7B1B-487E-BC8B-15B8536FA141}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

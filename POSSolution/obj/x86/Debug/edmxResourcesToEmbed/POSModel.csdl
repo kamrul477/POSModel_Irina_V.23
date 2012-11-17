@@ -1,0 +1,556 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="POSModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+  <EntityContainer Name="POSDBEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Areas" EntityType="POSModel.Area" a:GetterAccess="Internal" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" />
+    <EntitySet Name="Categories" EntityType="POSModel.Category" a:GetterAccess="Internal" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" />
+    <EntitySet Name="Companies" EntityType="POSModel.Company" a:GetterAccess="Internal" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" />
+    <EntitySet Name="Courses" EntityType="POSModel.Course" a:GetterAccess="Internal" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" />
+    <EntitySet Name="Menus" EntityType="POSModel.Menu" a:GetterAccess="Internal" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" />
+    <EntitySet Name="MenuProducts" EntityType="POSModel.MenuProduct" a:GetterAccess="Internal" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" />
+    <EntitySet Name="MenuProductTemperals" EntityType="POSModel.MenuProductTemperal" a:GetterAccess="Internal" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" />
+    <EntitySet Name="Payments" EntityType="POSModel.Payment" a:GetterAccess="Internal" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" />
+    <EntitySet Name="Permissions" EntityType="POSModel.Permission" a:GetterAccess="Internal" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" />
+    <EntitySet Name="People" EntityType="POSModel.Person" a:GetterAccess="Internal" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" />
+    <EntitySet Name="ProductDescriptions" EntityType="POSModel.ProductDescription" a:GetterAccess="Internal" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" />
+    <EntitySet Name="Sales" EntityType="POSModel.Sale" a:GetterAccess="Internal" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" />
+    <EntitySet Name="SaleLineItems" EntityType="POSModel.SaleLineItem" a:GetterAccess="Internal" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" />
+    <EntitySet Name="SaleUpdateByEmployees" EntityType="POSModel.SaleUpdateByEmployee" a:GetterAccess="Internal" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" />
+    <EntitySet Name="Stores" EntityType="POSModel.Store" a:GetterAccess="Internal" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" />
+    <EntitySet Name="Tables" EntityType="POSModel.Table" a:GetterAccess="Internal" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" />
+    <EntitySet Name="TableStates" EntityType="POSModel.TableState" a:GetterAccess="Internal" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" />
+    <EntitySet Name="Terminals" EntityType="POSModel.Terminal" a:GetterAccess="Internal" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" />
+    <AssociationSet Name="FK_Area_Store" Association="POSModel.FK_Area_Store">
+      <End Role="Store" EntitySet="Stores" />
+      <End Role="Area" EntitySet="Areas" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Table_Area" Association="POSModel.FK_Table_Area">
+      <End Role="Area" EntitySet="Areas" />
+      <End Role="Table" EntitySet="Tables" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Terminal_Area" Association="POSModel.FK_Terminal_Area">
+      <End Role="Area" EntitySet="Areas" />
+      <End Role="Terminal" EntitySet="Terminals" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Product_Category" Association="POSModel.FK_Product_Category">
+      <End Role="Category" EntitySet="Categories" />
+      <End Role="ProductDescription" EntitySet="ProductDescriptions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Person_Company" Association="POSModel.FK_Person_Company">
+      <End Role="Company" EntitySet="Companies" />
+      <End Role="Person" EntitySet="People" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Store_Company" Association="POSModel.FK_Store_Company">
+      <End Role="Company" EntitySet="Companies" />
+      <End Role="Store" EntitySet="Stores" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProductDescription_Course" Association="POSModel.FK_ProductDescription_Course">
+      <End Role="Course" EntitySet="Courses" />
+      <End Role="ProductDescription" EntitySet="ProductDescriptions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Sale_Employee_Employee" Association="POSModel.FK_Sale_Employee_Employee">
+      <End Role="Employee" EntitySet="People" />
+      <End Role="SaleUpdateByEmployee" EntitySet="SaleUpdateByEmployees" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Menu_Store" Association="POSModel.FK_Menu_Store">
+      <End Role="Store" EntitySet="Stores" />
+      <End Role="Menu" EntitySet="Menus" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MenuProduct_Menu" Association="POSModel.FK_MenuProduct_Menu">
+      <End Role="Menu" EntitySet="Menus" />
+      <End Role="MenuProduct" EntitySet="MenuProducts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MenuProduct_ProductDescription" Association="POSModel.FK_MenuProduct_ProductDescription">
+      <End Role="ProductDescription" EntitySet="ProductDescriptions" />
+      <End Role="MenuProduct" EntitySet="MenuProducts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MenuProductTemperal_MenuProduct" Association="POSModel.FK_MenuProductTemperal_MenuProduct">
+      <End Role="MenuProduct" EntitySet="MenuProducts" />
+      <End Role="MenuProductTemperal" EntitySet="MenuProductTemperals" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SaleLineItem_MenuProduct" Association="POSModel.FK_SaleLineItem_MenuProduct">
+      <End Role="MenuProduct" EntitySet="MenuProducts" />
+      <End Role="SaleLineItem" EntitySet="SaleLineItems" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Payment_Sale" Association="POSModel.FK_Payment_Sale">
+      <End Role="Sale" EntitySet="Sales" />
+      <End Role="Payment" EntitySet="Payments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Sale_Employee_Sale" Association="POSModel.FK_Sale_Employee_Sale">
+      <End Role="Sale" EntitySet="Sales" />
+      <End Role="SaleUpdateByEmployee" EntitySet="SaleUpdateByEmployees" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Sale_Table" Association="POSModel.FK_Sale_Table">
+      <End Role="Table" EntitySet="Tables" />
+      <End Role="Sale" EntitySet="Sales" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Sale_Terminal" Association="POSModel.FK_Sale_Terminal">
+      <End Role="Terminal" EntitySet="Terminals" />
+      <End Role="Sale" EntitySet="Sales" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SaleLineItem_Sale" Association="POSModel.FK_SaleLineItem_Sale">
+      <End Role="Sale" EntitySet="Sales" />
+      <End Role="SaleLineItem" EntitySet="SaleLineItems" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Table_TableState" Association="POSModel.FK_Table_TableState">
+      <End Role="TableState" EntitySet="TableStates" />
+      <End Role="Table" EntitySet="Tables" />
+    </AssociationSet>
+    <AssociationSet Name="EmployeePermissions" Association="POSModel.EmployeePermissions">
+      <End Role="Employee" EntitySet="People" />
+      <End Role="Permissions" EntitySet="Permissions" />
+    </AssociationSet>
+    <AssociationSet Name="MenuCategory" Association="POSModel.MenuCategory">
+      <End Role="Category" EntitySet="Categories" />
+      <End Role="Menu" EntitySet="Menus" />
+    </AssociationSet>
+    <AssociationSet Name="StoreEmployee" Association="POSModel.StoreEmployee">
+      <End Role="Employee" EntitySet="People" />
+      <End Role="Store" EntitySet="Stores" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Area" a:TypeAccess="Internal" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Guid" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Description" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="StoreId" Type="Guid" Nullable="false" />
+    <NavigationProperty Name="Store" Relationship="POSModel.FK_Area_Store" FromRole="Area" ToRole="Store" a:GetterAccess="Internal" a:SetterAccess="Internal" />
+    <NavigationProperty Name="Tables" Relationship="POSModel.FK_Table_Area" FromRole="Area" ToRole="Table" a:GetterAccess="Internal" a:SetterAccess="Internal" />
+    <NavigationProperty Name="Terminals" Relationship="POSModel.FK_Terminal_Area" FromRole="Area" ToRole="Terminal" a:GetterAccess="Internal" a:SetterAccess="Internal" />
+  </EntityType>
+  <EntityType Name="Category" a:TypeAccess="Internal" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Guid" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Description" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="ProductDescriptions" Relationship="POSModel.FK_Product_Category" FromRole="Category" ToRole="ProductDescription" a:GetterAccess="Internal" a:SetterAccess="Internal" />
+    <NavigationProperty Name="Menus" Relationship="POSModel.MenuCategory" FromRole="Category" ToRole="Menu" a:GetterAccess="Internal" a:SetterAccess="Internal" />
+  </EntityType>
+  <EntityType Name="Company" a:TypeAccess="Internal" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Guid" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Description" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="ABN" Type="Int64" Nullable="false" />
+    <Property Name="Address" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="People" Relationship="POSModel.FK_Person_Company" FromRole="Company" ToRole="Person" a:GetterAccess="Internal" a:SetterAccess="Internal" />
+    <NavigationProperty Name="Stores" Relationship="POSModel.FK_Store_Company" FromRole="Company" ToRole="Store" a:GetterAccess="Internal" a:SetterAccess="Internal" />
+  </EntityType>
+  <EntityType Name="Course">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Guid" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Description" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="ProductDescriptions" Relationship="POSModel.FK_ProductDescription_Course" FromRole="Course" ToRole="ProductDescription" a:GetterAccess="Internal" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" a:SetterAccess="Internal" />
+  </EntityType>
+  <EntityType Name="Employee" BaseType="POSModel.Person" a:TypeAccess="Internal" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration">
+    <Property Name="Password" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="SaleUpdateByEmployees" Relationship="POSModel.FK_Sale_Employee_Employee" FromRole="Employee" ToRole="SaleUpdateByEmployee" a:GetterAccess="Internal" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" a:SetterAccess="Internal" />
+    <NavigationProperty Name="Permissions" Relationship="POSModel.EmployeePermissions" FromRole="Employee" ToRole="Permissions" a:GetterAccess="Internal" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" a:SetterAccess="Internal" />
+    <NavigationProperty Name="Stores" Relationship="POSModel.StoreEmployee" FromRole="Employee" ToRole="Store" a:GetterAccess="Internal" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" a:SetterAccess="Internal" />
+  </EntityType>
+  <EntityType Name="Menu" a:TypeAccess="Internal" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Guid" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="StoreId" Type="Guid" Nullable="false" />
+    <NavigationProperty Name="Store" Relationship="POSModel.FK_Menu_Store" FromRole="Menu" ToRole="Store" a:GetterAccess="Internal" a:SetterAccess="Internal" />
+    <NavigationProperty Name="MenuProducts" Relationship="POSModel.FK_MenuProduct_Menu" FromRole="Menu" ToRole="MenuProduct" a:GetterAccess="Internal" a:SetterAccess="Internal" />
+    <NavigationProperty Name="Categories" Relationship="POSModel.MenuCategory" FromRole="Menu" ToRole="Category" a:GetterAccess="Internal" a:SetterAccess="Internal" />
+    <Property Type="String" Name="Description" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="MenuProduct" a:TypeAccess="Internal" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Guid" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MenuId" Type="Guid" Nullable="false" />
+    <Property Name="ProductId" Type="Guid" Nullable="false" />
+    <NavigationProperty Name="Menu" Relationship="POSModel.FK_MenuProduct_Menu" FromRole="MenuProduct" ToRole="Menu" a:GetterAccess="Internal" a:SetterAccess="Internal" />
+    <NavigationProperty Name="ProductDescription" Relationship="POSModel.FK_MenuProduct_ProductDescription" FromRole="MenuProduct" ToRole="ProductDescription" a:GetterAccess="Internal" a:SetterAccess="Internal" />
+    <NavigationProperty Name="MenuProductTemperals" Relationship="POSModel.FK_MenuProductTemperal_MenuProduct" FromRole="MenuProduct" ToRole="MenuProductTemperal" a:GetterAccess="Internal" a:SetterAccess="Internal" />
+    <NavigationProperty Name="SaleLineItems" Relationship="POSModel.FK_SaleLineItem_MenuProduct" FromRole="MenuProduct" ToRole="SaleLineItem" a:GetterAccess="Internal" a:SetterAccess="Internal" />
+  </EntityType>
+  <EntityType Name="MenuProductTemperal" a:TypeAccess="Internal" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration">
+    <Key>
+      <PropertyRef Name="MenuProductId" />
+      <PropertyRef Name="EffectiveFrom" />
+    </Key>
+    <Property Name="MenuProductId" Type="Guid" Nullable="false" />
+    <Property Name="EffectiveFrom" Type="DateTime" Nullable="false" />
+    <Property Name="Price" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+    <NavigationProperty Name="MenuProduct" Relationship="POSModel.FK_MenuProductTemperal_MenuProduct" FromRole="MenuProductTemperal" ToRole="MenuProduct" a:GetterAccess="Internal" a:SetterAccess="Internal" />
+  </EntityType>
+  <EntityType Name="Payment" a:TypeAccess="Internal" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" Abstract="true">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Guid" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SaleId" Type="Guid" Nullable="false" />
+    <Property Name="Amount" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+    <NavigationProperty Name="Sale" Relationship="POSModel.FK_Payment_Sale" FromRole="Payment" ToRole="Sale" a:GetterAccess="Internal" a:SetterAccess="Internal" />
+  </EntityType>
+  <EntityType Name="Permission" a:TypeAccess="Internal" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Guid" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Code" Type="String" Nullable="false" MaxLength="4" Unicode="false" FixedLength="false" />
+    <Property Name="Description" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="Employees" Relationship="POSModel.EmployeePermissions" FromRole="Permissions" ToRole="Employee" a:GetterAccess="Internal" a:SetterAccess="Internal" />
+  </EntityType>
+  <EntityType Name="Person" Abstract="true" a:TypeAccess="Internal" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Guid" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CompanyId" Type="Guid" Nullable="false" />
+    <Property Name="FirstName" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="LastName" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="Company" Relationship="POSModel.FK_Person_Company" FromRole="Person" ToRole="Company" a:GetterAccess="Internal" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" a:SetterAccess="Internal" />
+  </EntityType>
+  <EntityType Name="ProductDescription" a:TypeAccess="Internal" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Guid" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Description" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="BasePrice" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+    <Property Name="CourseId" Type="Guid" Nullable="false" />
+    <Property Name="Gst_Free" Type="Boolean" />
+    <Property Name="CategoryId" Type="Guid" Nullable="false" />
+    <NavigationProperty Name="Category" Relationship="POSModel.FK_Product_Category" FromRole="ProductDescription" ToRole="Category" a:GetterAccess="Internal" a:SetterAccess="Internal" />
+    <NavigationProperty Name="Course" Relationship="POSModel.FK_ProductDescription_Course" FromRole="ProductDescription" ToRole="Course" a:GetterAccess="Internal" a:SetterAccess="Internal" />
+    <NavigationProperty Name="MenuProducts" Relationship="POSModel.FK_MenuProduct_ProductDescription" FromRole="ProductDescription" ToRole="MenuProduct" a:GetterAccess="Internal" a:SetterAccess="Internal" />
+  </EntityType>
+  <EntityType Name="Sale" a:TypeAccess="Internal" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Guid" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TimeStamp" Type="DateTime" Nullable="false" annotation:StoreGeneratedPattern="Computed" />
+    <Property Name="TerminalId" Type="Guid" Nullable="false" />
+    <Property Name="TableId" Type="Guid" />
+    <NavigationProperty Name="Payments" Relationship="POSModel.FK_Payment_Sale" FromRole="Sale" ToRole="Payment" a:GetterAccess="Internal" a:SetterAccess="Internal" />
+    <NavigationProperty Name="SaleUpdateByEmployees" Relationship="POSModel.FK_Sale_Employee_Sale" FromRole="Sale" ToRole="SaleUpdateByEmployee" a:GetterAccess="Internal" a:SetterAccess="Internal" />
+    <NavigationProperty Name="Table" Relationship="POSModel.FK_Sale_Table" FromRole="Sale" ToRole="Table" a:GetterAccess="Internal" a:SetterAccess="Internal" />
+    <NavigationProperty Name="Terminal" Relationship="POSModel.FK_Sale_Terminal" FromRole="Sale" ToRole="Terminal" a:GetterAccess="Internal" a:SetterAccess="Internal" />
+    <NavigationProperty Name="SaleLineItems" Relationship="POSModel.FK_SaleLineItem_Sale" FromRole="Sale" ToRole="SaleLineItem" a:GetterAccess="Internal" a:SetterAccess="Internal" />
+    <Property Type="Int32" Name="Covers" />
+  </EntityType>
+  <EntityType Name="SaleLineItem" a:TypeAccess="Internal" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration">
+    <Key>
+      <PropertyRef Name="SaleId" />
+      <PropertyRef Name="MenuProductId" />
+    </Key>
+    <Property Name="SaleId" Type="Guid" Nullable="false" />
+    <Property Name="MenuProductId" Type="Guid" Nullable="false" />
+    <Property Name="Quantity" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="MenuProduct" Relationship="POSModel.FK_SaleLineItem_MenuProduct" FromRole="SaleLineItem" ToRole="MenuProduct" a:GetterAccess="Internal" a:SetterAccess="Internal" />
+    <NavigationProperty Name="Sale" Relationship="POSModel.FK_SaleLineItem_Sale" FromRole="SaleLineItem" ToRole="Sale" a:GetterAccess="Internal" a:SetterAccess="Internal" />
+  </EntityType>
+  <EntityType Name="SaleUpdateByEmployee" a:TypeAccess="Internal" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration">
+    <Key>
+      <PropertyRef Name="SaleId" />
+      <PropertyRef Name="Date" />
+      <PropertyRef Name="EmployeeId" />
+    </Key>
+    <Property Name="SaleId" Type="Guid" Nullable="false" />
+    <Property Name="Date" Type="DateTime" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="EmployeeId" Type="Guid" Nullable="false" />
+    <NavigationProperty Name="Employee" Relationship="POSModel.FK_Sale_Employee_Employee" FromRole="SaleUpdateByEmployee" ToRole="Employee" a:GetterAccess="Internal" a:SetterAccess="Internal" />
+    <NavigationProperty Name="Sale" Relationship="POSModel.FK_Sale_Employee_Sale" FromRole="SaleUpdateByEmployee" ToRole="Sale" a:GetterAccess="Internal" a:SetterAccess="Internal" />
+    <Property Type="String" Name="Message" MaxLength="200" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Store" a:TypeAccess="Internal" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Guid" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Description" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="CompanyId" Type="Guid" Nullable="false" />
+    <NavigationProperty Name="Areas" Relationship="POSModel.FK_Area_Store" FromRole="Store" ToRole="Area" a:GetterAccess="Internal" a:SetterAccess="Internal" />
+    <NavigationProperty Name="Company" Relationship="POSModel.FK_Store_Company" FromRole="Store" ToRole="Company" a:GetterAccess="Internal" a:SetterAccess="Internal" />
+    <NavigationProperty Name="Menus" Relationship="POSModel.FK_Menu_Store" FromRole="Store" ToRole="Menu" a:GetterAccess="Internal" a:SetterAccess="Internal" />
+    <NavigationProperty Name="Employees" Relationship="POSModel.StoreEmployee" FromRole="Store" ToRole="Employee" a:GetterAccess="Internal" a:SetterAccess="Internal" />
+  </EntityType>
+  <EntityType Name="Table" a:TypeAccess="Internal" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Guid" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Description" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="TableStateId" Type="Int32" />
+    <Property Name="AreaId" Type="Guid" />
+    <NavigationProperty Name="Area" Relationship="POSModel.FK_Table_Area" FromRole="Table" ToRole="Area" a:GetterAccess="Internal" a:SetterAccess="Internal" />
+    <NavigationProperty Name="Sales" Relationship="POSModel.FK_Sale_Table" FromRole="Table" ToRole="Sale" a:GetterAccess="Internal" a:SetterAccess="Internal" />
+    <NavigationProperty Name="TableState" Relationship="POSModel.FK_Table_TableState" FromRole="Table" ToRole="TableState" a:GetterAccess="Internal" a:SetterAccess="Internal" />
+  </EntityType>
+  <EntityType Name="TableState" a:TypeAccess="Internal" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Description" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="Tables" Relationship="POSModel.FK_Table_TableState" FromRole="TableState" ToRole="Table" a:GetterAccess="Internal" a:SetterAccess="Internal" />
+  </EntityType>
+  <EntityType Name="Terminal" a:TypeAccess="Internal" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Description" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="Id" Type="Guid" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AreaId" Type="Guid" Nullable="false" />
+    <NavigationProperty Name="Area" Relationship="POSModel.FK_Terminal_Area" FromRole="Terminal" ToRole="Area" a:GetterAccess="Internal" a:SetterAccess="Internal" />
+    <NavigationProperty Name="Sales" Relationship="POSModel.FK_Sale_Terminal" FromRole="Terminal" ToRole="Sale" a:GetterAccess="Internal" a:SetterAccess="Internal" />
+  </EntityType>
+  <Association Name="FK_Area_Store">
+    <End Role="Store" Type="POSModel.Store" Multiplicity="1" />
+    <End Role="Area" Type="POSModel.Area" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Store">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Area">
+        <PropertyRef Name="StoreId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Table_Area">
+    <End Role="Area" Type="POSModel.Area" Multiplicity="0..1" />
+    <End Role="Table" Type="POSModel.Table" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Area">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Table">
+        <PropertyRef Name="AreaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Terminal_Area">
+    <End Role="Area" Type="POSModel.Area" Multiplicity="1" />
+    <End Role="Terminal" Type="POSModel.Terminal" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Area">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Terminal">
+        <PropertyRef Name="AreaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Product_Category">
+    <End Role="Category" Type="POSModel.Category" Multiplicity="1" />
+    <End Role="ProductDescription" Type="POSModel.ProductDescription" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Category">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ProductDescription">
+        <PropertyRef Name="CategoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Person_Company">
+    <End Role="Company" Type="POSModel.Company" Multiplicity="1" />
+    <End Role="Person" Type="POSModel.Person" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Company">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Person">
+        <PropertyRef Name="CompanyId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Store_Company">
+    <End Role="Company" Type="POSModel.Company" Multiplicity="1" />
+    <End Role="Store" Type="POSModel.Store" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Company">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Store">
+        <PropertyRef Name="CompanyId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProductDescription_Course">
+    <End Role="Course" Type="POSModel.Course" Multiplicity="1" />
+    <End Role="ProductDescription" Type="POSModel.ProductDescription" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Course">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ProductDescription">
+        <PropertyRef Name="CourseId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Sale_Employee_Employee">
+    <End Role="Employee" Type="POSModel.Employee" Multiplicity="1" />
+    <End Role="SaleUpdateByEmployee" Type="POSModel.SaleUpdateByEmployee" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employee">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="SaleUpdateByEmployee">
+        <PropertyRef Name="EmployeeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Menu_Store">
+    <End Role="Store" Type="POSModel.Store" Multiplicity="1" />
+    <End Role="Menu" Type="POSModel.Menu" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Store">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Menu">
+        <PropertyRef Name="StoreId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MenuProduct_Menu">
+    <End Role="Menu" Type="POSModel.Menu" Multiplicity="1" />
+    <End Role="MenuProduct" Type="POSModel.MenuProduct" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Menu">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="MenuProduct">
+        <PropertyRef Name="MenuId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MenuProduct_ProductDescription">
+    <End Role="ProductDescription" Type="POSModel.ProductDescription" Multiplicity="1" />
+    <End Role="MenuProduct" Type="POSModel.MenuProduct" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProductDescription">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="MenuProduct">
+        <PropertyRef Name="ProductId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MenuProductTemperal_MenuProduct">
+    <End Role="MenuProduct" Type="POSModel.MenuProduct" Multiplicity="1" />
+    <End Role="MenuProductTemperal" Type="POSModel.MenuProductTemperal" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MenuProduct">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="MenuProductTemperal">
+        <PropertyRef Name="MenuProductId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SaleLineItem_MenuProduct">
+    <End Role="MenuProduct" Type="POSModel.MenuProduct" Multiplicity="1" />
+    <End Role="SaleLineItem" Type="POSModel.SaleLineItem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MenuProduct">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="SaleLineItem">
+        <PropertyRef Name="MenuProductId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Payment_Sale">
+    <End Role="Sale" Type="POSModel.Sale" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Payment" Type="POSModel.Payment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sale">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Payment">
+        <PropertyRef Name="SaleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Sale_Employee_Sale">
+    <End Role="Sale" Type="POSModel.Sale" Multiplicity="1" />
+    <End Role="SaleUpdateByEmployee" Type="POSModel.SaleUpdateByEmployee" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sale">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="SaleUpdateByEmployee">
+        <PropertyRef Name="SaleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Sale_Table">
+    <End Role="Table" Type="POSModel.Table" Multiplicity="0..1" />
+    <End Role="Sale" Type="POSModel.Sale" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Table">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Sale">
+        <PropertyRef Name="TableId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Sale_Terminal">
+    <End Role="Terminal" Type="POSModel.Terminal" Multiplicity="1" />
+    <End Role="Sale" Type="POSModel.Sale" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Terminal">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Sale">
+        <PropertyRef Name="TerminalId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SaleLineItem_Sale">
+    <End Role="Sale" Type="POSModel.Sale" Multiplicity="1" />
+    <End Role="SaleLineItem" Type="POSModel.SaleLineItem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sale">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="SaleLineItem">
+        <PropertyRef Name="SaleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Table_TableState">
+    <End Role="TableState" Type="POSModel.TableState" Multiplicity="0..1" />
+    <End Role="Table" Type="POSModel.Table" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TableState">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Table">
+        <PropertyRef Name="TableStateId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="EmployeePermissions">
+    <End Role="Employee" Type="POSModel.Employee" Multiplicity="*" />
+    <End Role="Permissions" Type="POSModel.Permission" Multiplicity="*" />
+  </Association>
+  <Association Name="MenuCategory">
+    <End Role="Category" Type="POSModel.Category" Multiplicity="*" />
+    <End Role="Menu" Type="POSModel.Menu" Multiplicity="*" />
+  </Association>
+  <Association Name="StoreEmployee">
+    <End Role="Employee" Type="POSModel.Employee" Multiplicity="*" />
+    <End Role="Store" Type="POSModel.Store" Multiplicity="*" />
+  </Association>
+  <EntityType Name="CashPayment" BaseType="POSModel.Payment" a:TypeAccess="Internal" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" />
+  <EntityType Name="EftposPayment" a:TypeAccess="Internal" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" BaseType="POSModel.Payment" />
+</Schema>

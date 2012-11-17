@@ -1,0 +1,651 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="POSModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="POSModelStoreContainer">
+    <EntitySet Name="Area" EntityType="POSModel.Store.Area" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Category" EntityType="POSModel.Store.Category" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Company" EntityType="POSModel.Store.Company" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Course" EntityType="POSModel.Store.Course" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Employee" EntityType="POSModel.Store.Employee" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="EmployeePermissions" EntityType="POSModel.Store.EmployeePermissions" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Menu" EntityType="POSModel.Store.Menu" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MenuCategory" EntityType="POSModel.Store.MenuCategory" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MenuProduct" EntityType="POSModel.Store.MenuProduct" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MenuProductTemperal" EntityType="POSModel.Store.MenuProductTemperal" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Payment" EntityType="POSModel.Store.Payment" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PaymentType" EntityType="POSModel.Store.PaymentType" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Permissions" EntityType="POSModel.Store.Permissions" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Person" EntityType="POSModel.Store.Person" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ProductDescription" EntityType="POSModel.Store.ProductDescription" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Sale" EntityType="POSModel.Store.Sale" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="SaleLineItem" EntityType="POSModel.Store.SaleLineItem" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="SaleUpdateByEmployee" EntityType="POSModel.Store.SaleUpdateByEmployee" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Store" EntityType="POSModel.Store.Store" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="StoreEmployee" EntityType="POSModel.Store.StoreEmployee" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Table" EntityType="POSModel.Store.Table" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TableState" EntityType="POSModel.Store.TableState" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Terminal" EntityType="POSModel.Store.Terminal" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_Area_Store" Association="POSModel.Store.FK_Area_Store">
+      <End Role="Store" EntitySet="Store" />
+      <End Role="Area" EntitySet="Area" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Employee_Person" Association="POSModel.Store.FK_Employee_Person">
+      <End Role="Person" EntitySet="Person" />
+      <End Role="Employee" EntitySet="Employee" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EmployeePermissions_Employee" Association="POSModel.Store.FK_EmployeePermissions_Employee">
+      <End Role="Employee" EntitySet="Employee" />
+      <End Role="EmployeePermissions" EntitySet="EmployeePermissions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EmployeePermissions_Permissions1" Association="POSModel.Store.FK_EmployeePermissions_Permissions1">
+      <End Role="Permissions" EntitySet="Permissions" />
+      <End Role="EmployeePermissions" EntitySet="EmployeePermissions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Menu_Store" Association="POSModel.Store.FK_Menu_Store">
+      <End Role="Store" EntitySet="Store" />
+      <End Role="Menu" EntitySet="Menu" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MenuCategory_Category" Association="POSModel.Store.FK_MenuCategory_Category">
+      <End Role="Category" EntitySet="Category" />
+      <End Role="MenuCategory" EntitySet="MenuCategory" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MenuCategory_Menu" Association="POSModel.Store.FK_MenuCategory_Menu">
+      <End Role="Menu" EntitySet="Menu" />
+      <End Role="MenuCategory" EntitySet="MenuCategory" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MenuProduct_Menu" Association="POSModel.Store.FK_MenuProduct_Menu">
+      <End Role="Menu" EntitySet="Menu" />
+      <End Role="MenuProduct" EntitySet="MenuProduct" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MenuProduct_ProductDescription" Association="POSModel.Store.FK_MenuProduct_ProductDescription">
+      <End Role="ProductDescription" EntitySet="ProductDescription" />
+      <End Role="MenuProduct" EntitySet="MenuProduct" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MenuProductTemperal_MenuProduct" Association="POSModel.Store.FK_MenuProductTemperal_MenuProduct">
+      <End Role="MenuProduct" EntitySet="MenuProduct" />
+      <End Role="MenuProductTemperal" EntitySet="MenuProductTemperal" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Payment_PaymentType" Association="POSModel.Store.FK_Payment_PaymentType">
+      <End Role="PaymentType" EntitySet="PaymentType" />
+      <End Role="Payment" EntitySet="Payment" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Payment_Sale" Association="POSModel.Store.FK_Payment_Sale">
+      <End Role="Sale" EntitySet="Sale" />
+      <End Role="Payment" EntitySet="Payment" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Person_Company" Association="POSModel.Store.FK_Person_Company">
+      <End Role="Company" EntitySet="Company" />
+      <End Role="Person" EntitySet="Person" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Product_Category" Association="POSModel.Store.FK_Product_Category">
+      <End Role="Category" EntitySet="Category" />
+      <End Role="ProductDescription" EntitySet="ProductDescription" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProductDescription_Course" Association="POSModel.Store.FK_ProductDescription_Course">
+      <End Role="Course" EntitySet="Course" />
+      <End Role="ProductDescription" EntitySet="ProductDescription" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Sale_Employee_Employee" Association="POSModel.Store.FK_Sale_Employee_Employee">
+      <End Role="Employee" EntitySet="Employee" />
+      <End Role="SaleUpdateByEmployee" EntitySet="SaleUpdateByEmployee" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Sale_Employee_Sale" Association="POSModel.Store.FK_Sale_Employee_Sale">
+      <End Role="Sale" EntitySet="Sale" />
+      <End Role="SaleUpdateByEmployee" EntitySet="SaleUpdateByEmployee" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Sale_Table" Association="POSModel.Store.FK_Sale_Table">
+      <End Role="Table" EntitySet="Table" />
+      <End Role="Sale" EntitySet="Sale" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Sale_Terminal" Association="POSModel.Store.FK_Sale_Terminal">
+      <End Role="Terminal" EntitySet="Terminal" />
+      <End Role="Sale" EntitySet="Sale" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SaleLineItem_MenuProduct" Association="POSModel.Store.FK_SaleLineItem_MenuProduct">
+      <End Role="MenuProduct" EntitySet="MenuProduct" />
+      <End Role="SaleLineItem" EntitySet="SaleLineItem" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SaleLineItem_Sale" Association="POSModel.Store.FK_SaleLineItem_Sale">
+      <End Role="Sale" EntitySet="Sale" />
+      <End Role="SaleLineItem" EntitySet="SaleLineItem" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Store_Company" Association="POSModel.Store.FK_Store_Company">
+      <End Role="Company" EntitySet="Company" />
+      <End Role="Store" EntitySet="Store" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Store_Employee_Employee" Association="POSModel.Store.FK_Store_Employee_Employee">
+      <End Role="Employee" EntitySet="Employee" />
+      <End Role="StoreEmployee" EntitySet="StoreEmployee" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Store_Employee_Store" Association="POSModel.Store.FK_Store_Employee_Store">
+      <End Role="Store" EntitySet="Store" />
+      <End Role="StoreEmployee" EntitySet="StoreEmployee" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Table_Area" Association="POSModel.Store.FK_Table_Area">
+      <End Role="Area" EntitySet="Area" />
+      <End Role="Table" EntitySet="Table" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Table_TableState" Association="POSModel.Store.FK_Table_TableState">
+      <End Role="TableState" EntitySet="TableState" />
+      <End Role="Table" EntitySet="Table" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Terminal_Area" Association="POSModel.Store.FK_Terminal_Area">
+      <End Role="Area" EntitySet="Area" />
+      <End Role="Terminal" EntitySet="Terminal" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Area">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Description" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="StoreId" Type="uniqueidentifier" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Category">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Description" Type="varchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Company">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Description" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="ABN" Type="bigint" Nullable="false" />
+    <Property Name="Address" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Course">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Description" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Employee">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Password" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="StoreId" Type="uniqueidentifier" Nullable="false" />
+  </EntityType>
+  <EntityType Name="EmployeePermissions">
+    <Key>
+      <PropertyRef Name="EmployeeId" />
+      <PropertyRef Name="PermissionId" />
+    </Key>
+    <Property Name="EmployeeId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="PermissionId" Type="uniqueidentifier" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Menu">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="StoreId" Type="uniqueidentifier" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MenuCategory">
+    <Key>
+      <PropertyRef Name="CategoryId" />
+      <PropertyRef Name="MenuId" />
+    </Key>
+    <Property Name="CategoryId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="MenuId" Type="uniqueidentifier" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MenuProduct">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="MenuId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="ProductId" Type="uniqueidentifier" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MenuProductTemperal">
+    <Key>
+      <PropertyRef Name="MenuProductId" />
+      <PropertyRef Name="EffectiveFrom" />
+    </Key>
+    <Property Name="MenuProductId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="EffectiveFrom" Type="datetime" Nullable="false" />
+    <Property Name="Price" Type="money" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Payment">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="SaleId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Amount" Type="money" Nullable="false" />
+    <Property Name="PaymentTypeId" Type="uniqueidentifier" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PaymentType">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Description" Type="varchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Permissions">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Code" Type="varchar" Nullable="false" MaxLength="4" />
+    <Property Name="Description" Type="varchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Person">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="CompanyId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="FirstName" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="LastName" Type="varchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="ProductDescription">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Description" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="BasePrice" Type="money" Nullable="false" />
+    <Property Name="CourseId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Gst_Free" Type="bit" />
+    <Property Name="CategoryId" Type="uniqueidentifier" />
+  </EntityType>
+  <EntityType Name="Sale">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="TimeStamp" Type="datetime" Nullable="false" StoreGeneratedPattern="Computed" />
+    <Property Name="TerminalId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="TableId" Type="uniqueidentifier" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SaleLineItem">
+    <Key>
+      <PropertyRef Name="SaleId" />
+      <PropertyRef Name="MenuProductId" />
+    </Key>
+    <Property Name="SaleId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="MenuProductId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Quantity" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SaleUpdateByEmployee">
+    <Key>
+      <PropertyRef Name="SaleId" />
+      <PropertyRef Name="Date" />
+      <PropertyRef Name="EmployeeId" />
+    </Key>
+    <Property Name="SaleId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Date" Type="datetime" Nullable="false" />
+    <Property Name="EmployeeId" Type="uniqueidentifier" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Store">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Description" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="CompanyId" Type="uniqueidentifier" Nullable="false" />
+  </EntityType>
+  <EntityType Name="StoreEmployee">
+    <Key>
+      <PropertyRef Name="StoreId" />
+      <PropertyRef Name="EmployeeId" />
+    </Key>
+    <Property Name="StoreId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="EmployeeId" Type="uniqueidentifier" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Table">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Description" Type="varchar" MaxLength="50" />
+    <Property Name="TableStateId" Type="int" />
+    <Property Name="AreaId" Type="uniqueidentifier" />
+  </EntityType>
+  <EntityType Name="TableState">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Description" Type="varchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Terminal">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Description" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="AreaId" Type="uniqueidentifier" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_Area_Store">
+    <End Role="Store" Type="POSModel.Store.Store" Multiplicity="1" />
+    <End Role="Area" Type="POSModel.Store.Area" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Store">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Area">
+        <PropertyRef Name="StoreId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Employee_Person">
+    <End Role="Person" Type="POSModel.Store.Person" Multiplicity="1" />
+    <End Role="Employee" Type="POSModel.Store.Employee" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Person">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Employee">
+        <PropertyRef Name="Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EmployeePermissions_Employee">
+    <End Role="Employee" Type="POSModel.Store.Employee" Multiplicity="1" />
+    <End Role="EmployeePermissions" Type="POSModel.Store.EmployeePermissions" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employee">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="EmployeePermissions">
+        <PropertyRef Name="EmployeeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EmployeePermissions_Permissions1">
+    <End Role="Permissions" Type="POSModel.Store.Permissions" Multiplicity="1" />
+    <End Role="EmployeePermissions" Type="POSModel.Store.EmployeePermissions" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Permissions">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="EmployeePermissions">
+        <PropertyRef Name="PermissionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Menu_Store">
+    <End Role="Store" Type="POSModel.Store.Store" Multiplicity="1" />
+    <End Role="Menu" Type="POSModel.Store.Menu" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Store">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Menu">
+        <PropertyRef Name="StoreId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MenuCategory_Category">
+    <End Role="Category" Type="POSModel.Store.Category" Multiplicity="1" />
+    <End Role="MenuCategory" Type="POSModel.Store.MenuCategory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Category">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="MenuCategory">
+        <PropertyRef Name="CategoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MenuCategory_Menu">
+    <End Role="Menu" Type="POSModel.Store.Menu" Multiplicity="1" />
+    <End Role="MenuCategory" Type="POSModel.Store.MenuCategory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Menu">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="MenuCategory">
+        <PropertyRef Name="MenuId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MenuProduct_Menu">
+    <End Role="Menu" Type="POSModel.Store.Menu" Multiplicity="1" />
+    <End Role="MenuProduct" Type="POSModel.Store.MenuProduct" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Menu">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="MenuProduct">
+        <PropertyRef Name="MenuId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MenuProduct_ProductDescription">
+    <End Role="ProductDescription" Type="POSModel.Store.ProductDescription" Multiplicity="1" />
+    <End Role="MenuProduct" Type="POSModel.Store.MenuProduct" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProductDescription">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="MenuProduct">
+        <PropertyRef Name="ProductId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MenuProductTemperal_MenuProduct">
+    <End Role="MenuProduct" Type="POSModel.Store.MenuProduct" Multiplicity="1" />
+    <End Role="MenuProductTemperal" Type="POSModel.Store.MenuProductTemperal" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MenuProduct">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="MenuProductTemperal">
+        <PropertyRef Name="MenuProductId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Payment_PaymentType">
+    <End Role="PaymentType" Type="POSModel.Store.PaymentType" Multiplicity="1" />
+    <End Role="Payment" Type="POSModel.Store.Payment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PaymentType">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Payment">
+        <PropertyRef Name="PaymentTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Payment_Sale">
+    <End Role="Sale" Type="POSModel.Store.Sale" Multiplicity="1" />
+    <End Role="Payment" Type="POSModel.Store.Payment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sale">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Payment">
+        <PropertyRef Name="SaleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Person_Company">
+    <End Role="Company" Type="POSModel.Store.Company" Multiplicity="1" />
+    <End Role="Person" Type="POSModel.Store.Person" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Company">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Person">
+        <PropertyRef Name="CompanyId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Product_Category">
+    <End Role="Category" Type="POSModel.Store.Category" Multiplicity="0..1" />
+    <End Role="ProductDescription" Type="POSModel.Store.ProductDescription" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Category">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ProductDescription">
+        <PropertyRef Name="CategoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProductDescription_Course">
+    <End Role="Course" Type="POSModel.Store.Course" Multiplicity="1" />
+    <End Role="ProductDescription" Type="POSModel.Store.ProductDescription" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Course">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ProductDescription">
+        <PropertyRef Name="CourseId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Sale_Employee_Employee">
+    <End Role="Employee" Type="POSModel.Store.Employee" Multiplicity="1" />
+    <End Role="SaleUpdateByEmployee" Type="POSModel.Store.SaleUpdateByEmployee" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employee">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="SaleUpdateByEmployee">
+        <PropertyRef Name="EmployeeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Sale_Employee_Sale">
+    <End Role="Sale" Type="POSModel.Store.Sale" Multiplicity="1" />
+    <End Role="SaleUpdateByEmployee" Type="POSModel.Store.SaleUpdateByEmployee" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sale">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="SaleUpdateByEmployee">
+        <PropertyRef Name="SaleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Sale_Table">
+    <End Role="Table" Type="POSModel.Store.Table" Multiplicity="1" />
+    <End Role="Sale" Type="POSModel.Store.Sale" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Table">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Sale">
+        <PropertyRef Name="TableId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Sale_Terminal">
+    <End Role="Terminal" Type="POSModel.Store.Terminal" Multiplicity="1" />
+    <End Role="Sale" Type="POSModel.Store.Sale" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Terminal">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Sale">
+        <PropertyRef Name="TerminalId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SaleLineItem_MenuProduct">
+    <End Role="MenuProduct" Type="POSModel.Store.MenuProduct" Multiplicity="1" />
+    <End Role="SaleLineItem" Type="POSModel.Store.SaleLineItem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MenuProduct">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="SaleLineItem">
+        <PropertyRef Name="MenuProductId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SaleLineItem_Sale">
+    <End Role="Sale" Type="POSModel.Store.Sale" Multiplicity="1" />
+    <End Role="SaleLineItem" Type="POSModel.Store.SaleLineItem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sale">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="SaleLineItem">
+        <PropertyRef Name="SaleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Store_Company">
+    <End Role="Company" Type="POSModel.Store.Company" Multiplicity="1" />
+    <End Role="Store" Type="POSModel.Store.Store" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Company">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Store">
+        <PropertyRef Name="CompanyId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Store_Employee_Employee">
+    <End Role="Employee" Type="POSModel.Store.Employee" Multiplicity="1" />
+    <End Role="StoreEmployee" Type="POSModel.Store.StoreEmployee" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employee">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="StoreEmployee">
+        <PropertyRef Name="EmployeeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Store_Employee_Store">
+    <End Role="Store" Type="POSModel.Store.Store" Multiplicity="1" />
+    <End Role="StoreEmployee" Type="POSModel.Store.StoreEmployee" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Store">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="StoreEmployee">
+        <PropertyRef Name="StoreId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Table_Area">
+    <End Role="Area" Type="POSModel.Store.Area" Multiplicity="0..1" />
+    <End Role="Table" Type="POSModel.Store.Table" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Area">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Table">
+        <PropertyRef Name="AreaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Table_TableState">
+    <End Role="TableState" Type="POSModel.Store.TableState" Multiplicity="0..1" />
+    <End Role="Table" Type="POSModel.Store.Table" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TableState">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Table">
+        <PropertyRef Name="TableStateId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Terminal_Area">
+    <End Role="Area" Type="POSModel.Store.Area" Multiplicity="1" />
+    <End Role="Terminal" Type="POSModel.Store.Terminal" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Area">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Terminal">
+        <PropertyRef Name="AreaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>
